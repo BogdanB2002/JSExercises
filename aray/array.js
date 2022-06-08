@@ -85,7 +85,7 @@ console.log(fruit10)
 
 const salut = ['Apple', 'Mango', 'Cherry'];
 salut.forEach(function(item, index, array) {
-    console.log(item, index);
+    console.log(item, index)
 });
 
 // merge  multiple arrays 
@@ -95,4 +95,113 @@ const moreFructe = ['Mango', 'Cherry'];
 const combinedFructe = fructe.concat(moreFructe);
 console.log(combinedFructe);
 
-// de explicat copy and grouping
+// map
+
+const array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x*2);
+console.log(map1);
+
+ const numbers = [1, 4, 9, 16];
+ const roots = numbers.map((num) => Math.sqrt(num));
+ console.log(roots);
+
+ const kvArray = [{ key: 1, value: 10},
+                  { key: 2, value: 20},
+                  { key :3, value: 30}]
+const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
+
+const persons = [{
+    age: 20 ,
+    name: "Bogdan",
+}, {
+    age: 25,
+    name: "Ionut",    
+}, {
+    age: 22,
+    name: "Maria",
+}];
+const reformedrPerson = persons.map(function(person){ 
+     return person.age + " " + person.name
+})
+
+console.log(reformedrPerson);
+
+const person2 = [{
+    name: "Bogdan" ,
+    age: 20 ,
+    adress: "Izvorului72" , 
+},  { 
+    name: "Bogdan" ,
+    age: 20 ,
+    adress: "Izvorului72" ,
+} , {
+    name: "Bogdan" ,
+    age: 20 ,
+    adress: "Izvorului72" ,
+}] ;
+
+const reformedPerson2 = person2.map(function(person2){
+return "name:" + person2.name + " " + "age:" + person2.age + " " + "adress:"  + person2.adress;
+})
+
+console.log(reformedPerson2);
+
+
+// filter
+
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter( word => word.length < 6);
+console.log(result);
+
+const person3 = [{
+    age: 20 ,
+}, {
+    age: 17 ,
+}, {
+    age: 12 ,
+}]
+
+const resultAge = person3.filter( person3 => person3.age < 22);
+console.log(resultAge);
+
+//  pop 
+
+const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+const popped = myFish.pop();
+console.log(myFish);
+console.log(popped);
+
+//  push 
+
+const animals = ['pigs', 'goats', 'sheep'];
+const count = animals.push('cows');
+animals.push('chicken', 'bow', 'da');
+console.log(count);
+console.log(animals);
+
+// sort
+
+ const months = ['March', 'Jan', 'Feb', 'Dec'];
+ months.sort();
+ console.log(months);
+
+ let numberArray = [40, 1, 5, 200];
+ function compareNumbers(a, b) {
+     return b - a;
+ }
+ console.log(numberArray.sort(compareNumbers))
+
+//  some
+
+const array =[1, 2, 3, 4, 5, 6];
+const odd = (element) => element % 2 === 0;
+console.log(array.some(odd));
+
+
+// 
+
+const  belowTreshold = (currentValue) => currentValue < 40;
+const array3 = [1, 30, 39, 29, 10, 13];
+console.log(array3.every(belowTreshold));
+
