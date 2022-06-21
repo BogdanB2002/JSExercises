@@ -34,13 +34,8 @@ console.log(lastItem);
 // ex4
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const odd2 = [];
-const oddNumbers = array.map((number2) => {
-  if (number2 % 2 === 1) {
-    odd2.push(number2);
-  }
-});
-console.log(odd2);
+const oddNumbers = array.filter(n => n%2) ;
+console.log(oddNumbers);
 
 // ex 5
 
@@ -90,12 +85,12 @@ const reformedStudents = students.map(function (students) {
   return { ...students, grade: students.grade + 2 };
 });
 
-const biggerStudents = [];
-
-students.forEach((student) => {
-  if (student.grade > 7) {
-    biggerStudents.push(student.name);
-  }
-});
-
+let  biggerStudents = students.filter(person => person.grade > 6);
 console.log(biggerStudents);
+
+// students.filter((student) => {
+//   if (student.grade > 7) {
+//     biggerStudents.map(student.name);
+//   }
+// });
+
